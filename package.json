@@ -1,6 +1,6 @@
 {
   "name": "react-native-masked-loader",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "A simple content and skeleton loader component for react native with animation",
   "main": "index.js",
   "scripts": {},
@@ -8,6 +8,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/salmansalary/react-native-masked-loader/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "homepage": "https://github.com/salmansalary/react-native-masked-loader",
   "keywords": [
