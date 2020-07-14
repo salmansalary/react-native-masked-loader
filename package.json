@@ -1,10 +1,9 @@
 {
   "name": "react-native-masked-loader",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple content and skeleton loader component for react native with animation",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "salman salari",
   "license": "MIT",
   "bugs": {
