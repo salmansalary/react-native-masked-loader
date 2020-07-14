@@ -14,13 +14,13 @@ you can simple create a SVG elements with an arbitry color and pass it to the li
 ## Getting Started
 
 ```
-$ yarn add react-native-skeleton-loader
+$ yarn add react-native-masked-loader
 ```
 
 or
 
 ```
-$ npm install --save react-native-skeleton-loader
+$ npm install --save react-native-masked-loader
 ```
 
 <img src="preview.gif" width="200" height="380">
