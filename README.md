@@ -7,8 +7,9 @@ you can simply create your SVG elements with an arbitry color and pass it to the
 
 ## Platforms Supported
 
-- [x] iOS
-- [x] Android
+:white_check_mark: iOS
+
+:white_check_mark: Android
 
 
 ## Getting Started
