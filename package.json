@@ -1,10 +1,9 @@
 {
   "name": "react-native-masked-loader",
-  "version": "1.0.2",
-  "description": "A simple content loader component for react native with animation",
+  "version": "1.0.3",
+  "description": "A simple content and skeleton loader component for react native with animation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "salman salari",
   "license": "MIT",
@@ -20,7 +19,12 @@
     "loader",
     "loading",
     "content",
-    "svg"
+    "svg",
+    "mask",
+    "masked",
+    "react-native-mask-loader",
+    "react-native-content-loader",
+    "react-native-masked-loader"
   ],
   "devDependencies": {
     "metro-react-native-babel-preset": "^0.60.0"
