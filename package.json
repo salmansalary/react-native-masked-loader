@@ -1,0 +1,28 @@
+{
+  "name": "react-native-skeleton-loader",
+  "version": "1.0.0",
+  "description": "A simple content loader component for react native with animation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "salman salari",
+  "license": "ISC",
+  "keywords": [
+    "react",
+    "react-native",
+    "skeleton",
+    "placeholder",
+    "loader",
+    "loading",
+    "content",
+    "svg"
+  ],
+  "devDependencies": {
+    "metro-react-native-babel-preset": "^0.60.0"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.10",
+    "react-native-svg": "^12.1.0"
+  }
+}
