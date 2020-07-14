@@ -23,7 +23,7 @@ or
 $ npm install --save react-native-skeleton-loader
 ```
 
-![](preview.gif)
+<img src="preview.gif" width="200" height="380">
 
 ## Usage
 
