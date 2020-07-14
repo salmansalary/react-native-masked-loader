@@ -1,5 +1,5 @@
 {
-  "name": "react-native-skeleton-loader",
+  "name": "react-native-masked-loader",
   "version": "1.0.0",
   "description": "A simple content loader component for react native with animation",
   "main": "index.js",
@@ -9,9 +9,9 @@
   "author": "salman salari",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/salmansalary/react-native-skeleton-loader/issues"
+    "url": "https://github.com/salmansalary/react-native-masked-loader/issues"
   },
-  "homepage": "https://github.com/salmansalary/react-native-skeleton-loader",
+  "homepage": "https://github.com/salmansalary/react-native-masked-loader",
   "keywords": [
     "react",
     "react-native",
