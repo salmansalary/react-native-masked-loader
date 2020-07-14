@@ -1,4 +1,4 @@
-# react-native-skeleton-loader
+# react-native-masked-loader
 
 Creating butter smooth content and skeleton loader in react native.
 
@@ -14,13 +14,13 @@ you can simple create a SVG elements with an arbitry color and pass it to the li
 ## Getting Started
 
 ```
-$ yarn add react-native-skeleton-loader
+$ yarn add react-native-masked-loader
 ```
 
 or
 
 ```
-$ npm install --save react-native-skeleton-loader
+$ npm install --save react-native-masked-loader
 ```
 
 <img src="preview.gif" width="200" height="380">
@@ -69,7 +69,7 @@ export default function BOSLoader() {
 | ------------- | -------- |
 | MaskedElement | Yes      |
 | duration      | No       | - animation duration in milisecond - default is 1200
-| delay         | No       | - delay in milisecond for evry round of animation
+| delay         | No       | - delay in milisecond for every round of animation default is zero
 | forColor      | No       | - the animated gradient color default is #CBCBCB
 | backColor     | No       | - the backgound of maked view the default is #E0E0E0
 
