@@ -23,7 +23,7 @@ or
 $ npm install --save react-native-masked-loader
 ```
 
-<img src="preview.gif" width="200" height="380">
+<img src="https://github.com/salmansalary/react-native-masked-loader/blob/master/preview.gif" width="200" height="380">
 
 ## Props
 
