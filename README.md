@@ -2,7 +2,7 @@
 
 Creating butter smooth content and skeleton loader in react native.
 
-react-native-skeleton-loader is using react-native-masked-view and react-native-svg.
+***react-native-skeleton-loader*** is using ***react-native-masked-view*** and ***react-native-svg***.
 you can simple create a SVG elements with an arbitry color and pass it to the library;
 
 ## Platforms Supported
