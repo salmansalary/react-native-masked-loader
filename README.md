@@ -25,6 +25,17 @@ $ npm install --save react-native-masked-loader
 
 <img src="preview.gif" width="200" height="380">
 
+## Props
+
+| Type          | Required | Description                                                       |
+|---------------|----------|-------------------------------------------------------------------|
+| MaskedElement | Yes      |                                                                   |
+| duration      | No       | animation duration in millisecond the default is 1200             |
+| delay         | No       | delay in millisecond for every round of animation default is zero |
+| forColor      | No       | the animated gradient color default is #CBCBCB                    |
+| backColor     | No       | the backgound of maked view the default is #E0E0E0                |
+
+
 ## Usage
 
 ```jsx
@@ -62,14 +73,4 @@ export default function BOSLoader() {
   );
 }
 
-``
-### Props
-
-| Type          | Required |
-| ------------- | -------- |
-| MaskedElement | Yes      |
-| duration      | No       | - animation duration in milisecond - default is 1200
-| delay         | No       | - delay in milisecond for every round of animation default is zero
-| forColor      | No       | - the animated gradient color default is #CBCBCB
-| backColor     | No       | - the backgound of maked view the default is #E0E0E0
-
+```
