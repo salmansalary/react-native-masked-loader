@@ -1,4 +1,4 @@
-# react-native-skeleton-loader
+# react-native-masked-loader
 
 Creating butter smooth content and skeleton loader in react native.
 
@@ -69,7 +69,7 @@ export default function BOSLoader() {
 | ------------- | -------- |
 | MaskedElement | Yes      |
 | duration      | No       | - animation duration in milisecond - default is 1200
-| delay         | No       | - delay in milisecond for evry round of animation
+| delay         | No       | - delay in milisecond for every round of animation default is zero
 | forColor      | No       | - the animated gradient color default is #CBCBCB
 | backColor     | No       | - the backgound of maked view the default is #E0E0E0
 
