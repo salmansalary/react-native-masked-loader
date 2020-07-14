@@ -23,6 +23,8 @@ or
 $ npm install --save react-native-skeleton-loader
 ```
 
+![](preview.gif)
+
 ## Usage
 
 ```jsx
