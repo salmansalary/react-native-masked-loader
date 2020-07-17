@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Animated, Dimensions, StyleSheet } from 'react-native';
+import { View, Animated, Dimensions, StyleSheet, I18nManager } from 'react-native';
 import MaskedView from '@react-native-community/masked-view';
 import Svg, { LinearGradient, Defs, Rect, Stop } from 'react-native-svg';
 
@@ -10,7 +10,7 @@ const animatedStyle = {
     width: width,
     left: -width,
     backgroundColor: 'transparent',
-    zIndex: 2,
+    zIndex: 2
 };
 const styles = StyleSheet.create({
     container: {
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         right: 0,
         bottom: 0,
         zIndex: 1,
-        flex: 1
+        flex: 1,
     }
 });
 
@@ -42,7 +42,7 @@ const ContentLoader = (props) => {
         duration = !!duration ? duration : 1200;
         delay = !!delay ? delay : 0;
         Animated.loop(Animated.timing(translateYValue, {
-            toValue: width * 2,
+            toValue: !I18nManager.isRTL ? (2 * width) : (-2 * width),
             duration,
             delay,
             useNativeDriver: true,
