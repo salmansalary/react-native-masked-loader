@@ -15,13 +15,20 @@ you can simply create your SVG elements with an arbitry color and pass it to the
 ## Getting Started
 
 ```
-$ yarn add react-native-masked-loader
+$ yarn add react-native-masked-loader react-native-masked-view react-native-svg
 ```
 
 or
 
 ```
-$ npm install --save react-native-masked-loader
+$ npm install --save react-native-masked-loader react-native-masked-view react-native-svg
+```
+
+for IOS
+
+```
+$ cd ios
+  pod install
 ```
 
 <img src="https://github.com/salmansalary/react-native-masked-loader/blob/master/preview.gif" width="200" height="380">
