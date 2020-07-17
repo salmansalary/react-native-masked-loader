@@ -29,7 +29,7 @@ const BackgroundComponent = (props) => {
 }
 
 const ContentLoader = (props) => {
-    const { MaskedElement, forColor, backColor } = props || {};
+    const { MaskedElement } = props || {};
     let { forColor, backColor } = props || {};
     
     forColor = !!forColor ? forColor : '#CBCBCB';
@@ -41,7 +41,7 @@ const ContentLoader = (props) => {
         let { duration, delay } = props;
         duration = !!duration ? duration : 1200;
         delay = !!delay ? delay : 0;
-        Animated.loop(Animated.timing(this.state.translateYValue, {
+        Animated.loop(Animated.timing(translateYValue, {
             toValue: width * 2,
             duration,
             delay,
