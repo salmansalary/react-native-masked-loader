@@ -42,6 +42,7 @@ $ cd ios
 | delay         | No       | delay in millisecond for every round of animation default is zero |
 | forColor      | No       | the animated gradient color default is #CBCBCB                    |
 | backColor     | No       | the backgound of maked view the default is #E0E0E0                |
+| dir           | No       | animation direction the default is "ltr",  ltr/rtl                |
 
 
 ## Usage

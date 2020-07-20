@@ -1,17 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Animated, Dimensions, StyleSheet, I18nManager } from 'react-native';
 import MaskedView from '@react-native-community/masked-view';
 import Svg, { LinearGradient, Defs, Rect, Stop } from 'react-native-svg';
 
 const { width } = Dimensions.get('window');
-const translateYValue = new Animated.Value(0);
-const animatedStyle = {
-    transform: [{ translateX: translateYValue }],
-    width: width,
-    left: -width,
-    backgroundColor: 'transparent',
-    zIndex: 2
-};
+
 const styles = StyleSheet.create({
     container: {
         position: 'absolute',
@@ -28,6 +21,20 @@ const BackgroundComponent = (props) => {
     return <View style={{...styles.container, backgroundColor: props.backColor}}/>;
 }
 
+const dirOrigin = {
+    ltr: {
+        left: (I18nManager.isRTL ? -1 : 1) * -width,
+    },
+    rtl: {
+        left: (I18nManager.isRTL ? -1 : 1) * width
+    }
+}
+
+const dirDestination = {
+    ltr: 2 * width,
+    rtl: 2 * -width
+}
+
 const ContentLoader = (props) => {
     const { MaskedElement } = props || {};
     let { forColor, backColor } = props || {};
@@ -35,20 +42,9 @@ const ContentLoader = (props) => {
     forColor = !!forColor ? forColor : '#CBCBCB';
     backColor = !!backColor ? backColor : '#E0E0E0';
     
+    const translateYValue = new Animated.Value(0)
+    const [animatedStyle, setAnimatedStyle] = useState({});
     
-    
-    const show = () => {
-        let { duration, delay } = props;
-        duration = !!duration ? duration : 1200;
-        delay = !!delay ? delay : 0;
-        Animated.loop(Animated.timing(translateYValue, {
-            toValue: !I18nManager.isRTL ? (2 * width) : (-2 * width),
-            duration,
-            delay,
-            useNativeDriver: true,
-        })).start();
-    }
-
     const getAnimationElement = (forColor) => {
         return (
             React.createElement(Svg, { height: "100%", preserveAspectRatio: "xMinYMin slice", width: "100%", viewBox: "0 0 100 100" },
@@ -63,8 +59,27 @@ const ContentLoader = (props) => {
     }
 
     useEffect(() => {
-        show()
-    }, []);
+
+        setAnimatedStyle({
+            transform: [{ translateX: translateYValue }],
+            width: width,
+            backgroundColor: 'transparent',
+            zIndex: 2,
+            ...dirOrigin[props.dir || 'ltr']
+        });
+       
+        let { duration, delay } = props;
+        duration = !!duration ? duration : 1200;
+        delay = !!delay ? delay : 0;
+        
+        Animated.loop(Animated.timing(translateYValue, {
+            toValue:  dirDestination[props.dir || 'ltr'],
+            duration,
+            delay,
+            useNativeDriver: true,
+        })).start();
+        
+    },[]);
 
     return (
         React.createElement(MaskedView, { maskElement: MaskedElement },
