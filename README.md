@@ -32,17 +32,20 @@ $ cd ios
 ```
 
 <img src="https://github.com/salmansalary/react-native-masked-loader/blob/master/preview.gif" width="200" height="380">
+<img src="https://github.com/salmansalary/react-native-masked-loader/blob/master/preview2.gif" width="200" height="380">
 
 ## Props
 
-| Type          | Required | Description                                                       |
-|---------------|----------|-------------------------------------------------------------------|
-| MaskedElement | Yes      |                                                                   |
-| duration      | No       | animation duration in millisecond the default is 1200             |
-| delay         | No       | delay in millisecond for every round of animation default is zero |
-| forColor      | No       | the animated gradient color default is #CBCBCB                    |
-| backColor     | No       | the backgound of maked view the default is #E0E0E0                |
-| dir           | No       | animation direction the default is "ltr",  ltr/rtl/top/bottom     |
+| Type            | Required | Description                                                                             |
+|-----------------|----------|-----------------------------------------------------------------------------------------|
+| MaskedElement   | Yes      |                                                                                         |
+| duration        | No       | animation duration in millisecond the default is 1200                                   |
+| delay           | No       | delay in millisecond for every round of animation default is zero                       |
+| forColor        | No       | the animated gradient color default is #CBCBCB                                          |
+| forColorOpacity | No       | its recommended to use this when you have backgroundImage, the default is 1             |
+| backColor       | No       | the backgound of maked view the default is #E0E0E0                                      |
+| backgroundImage | No       | the backgoundImage =>  backgoundImage={uri:'imageUrl'}                                  |
+| dir             | No       | animation direction the default is "ltr",  ltr/rtl/top/bottom                           |
 
 
 ## Usage

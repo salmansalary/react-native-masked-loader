@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Animated, Dimensions, StyleSheet, I18nManager } from 'react-native';
+import { View, Animated, Dimensions, StyleSheet, I18nManager, ImageBackground } from 'react-native';
 import MaskedView from '@react-native-community/masked-view';
 import Svg, { LinearGradient, Defs, Rect, Stop } from 'react-native-svg';
 
@@ -14,12 +14,28 @@ const styles = StyleSheet.create({
         bottom: 0,
         zIndex: 1,
         flex: 1,
+    },
+    backgroundImage:{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 1,
+        flex: 2,
+        resizeMode: 'contain'
     }
 });
 
 const BackgroundComponent = (props) => {
-    const { backColor,onLayout } = props; 
-    return <View style={{ ...styles.container, backgroundColor: backColor }} onLayout={onLayout} />;
+    const { backColor,onLayout, backgroundImage } = props; 
+    return <>
+        <View style={{ ...styles.container, backgroundColor: backColor }} onLayout={onLayout} />
+        {
+            !!backgroundImage &&
+            <ImageBackground source={backgroundImage} style={styles.backgroundImage}/>
+        }
+    </>;
 }
 
 let dirOrigin = {
@@ -38,15 +54,16 @@ let dirDestination = {
 
 const ContentLoader = (props) => {
     const { MaskedElement } = props || {};
-    let { forColor, backColor } = props || {};
+    let { forColor, backColor, backgroundImage, forColorOpacity } = props || {};
     
     forColor = !!forColor ? forColor : '#CBCBCB';
     backColor = !!backColor ? backColor : '#E0E0E0';
-    
+    forColorOpacity = !!forColorOpacity ? forColorOpacity : 1;
+
     const translateYValue = new Animated.Value(0)
     const [animatedStyle, setAnimatedStyle] = useState({});
     
-    const getAnimationElement = (forColor) => {
+    const getAnimationElement = (forColor, forColorOpacity) => {
         let { dir } = props;
         return !!['top','bottom'].find(ky=> ky === dir) ? 
         (
@@ -54,8 +71,8 @@ const ContentLoader = (props) => {
             React.createElement(Defs, null,
             React.createElement(LinearGradient, { id: "grad", x1: "0.5", y1: "0", x2: "0.5", y2: "1" },
             React.createElement(Stop, { offset: "0", stopColor: forColor, stopOpacity: "0" }),
-            React.createElement(Stop, { offset: "0.3", stopColor: forColor, stopOpacity: "1" }),
-            React.createElement(Stop, { offset: "0.7", stopColor: forColor, stopOpacity: "1" }),
+            React.createElement(Stop, { offset: "0.3", stopColor: forColor, stopOpacity: forColorOpacity }),
+            React.createElement(Stop, { offset: "0.7", stopColor: forColor, stopOpacity: forColorOpacity }),
             React.createElement(Stop, { offset: "1", stopColor: forColor, stopOpacity: "0" }))),
             React.createElement(Rect, { x: "0", y: "0", width: "100%", height: "100%", fill: "url(#grad)" }))
         )
@@ -64,8 +81,8 @@ const ContentLoader = (props) => {
             React.createElement(Defs, null,
             React.createElement(LinearGradient, { id: "grad", x1: "0", y1: "0.5", x2: "1", y2: "0.5" },
             React.createElement(Stop, { offset: "0", stopColor: forColor, stopOpacity: "0" }),
-            React.createElement(Stop, { offset: "0.3", stopColor: forColor, stopOpacity: "1" }),
-            React.createElement(Stop, { offset: "0.7", stopColor: forColor, stopOpacity: "1" }),
+            React.createElement(Stop, { offset: "0.3", stopColor: forColor, stopOpacity: forColorOpacity }),
+            React.createElement(Stop, { offset: "0.7", stopColor: forColor, stopOpacity: forColorOpacity }),
             React.createElement(Stop, { offset: "1", stopColor: forColor, stopOpacity: "0" }))),
             React.createElement(Rect, { x: "0", y: "0", width: "100%", height: "100%", fill: "url(#grad)" }))
         );
@@ -107,7 +124,7 @@ const ContentLoader = (props) => {
 
     return (
         React.createElement(MaskedView, { maskElement: MaskedElement },
-        React.createElement(BackgroundComponent, { backColor: backColor, onLayout:ev=>{
+        React.createElement(BackgroundComponent, { backColor: backColor, backgroundImage, onLayout:ev=>{
             let { dir } = props;
 
             //for Horizantal will happen in useeffect
@@ -147,7 +164,7 @@ const ContentLoader = (props) => {
             show();
             
         }}),
-        React.createElement(Animated.View, { style: animatedStyle }, getAnimationElement(forColor)))
+        React.createElement(Animated.View, { style: animatedStyle }, getAnimationElement(forColor, forColorOpacity)))
     );
 }
 
