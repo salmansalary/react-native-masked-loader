@@ -88,3 +88,5 @@ export default function BOSLoader() {
 }
 
 ```
+## LICENSE
+[MIT](https://raw.githubusercontent.com/salmansalary/react-native-masked-loader/master/LICENSE)
